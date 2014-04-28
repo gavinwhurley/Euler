@@ -21,7 +21,13 @@ public void AddFactor(int FactorMe, ref List<int> FactorList)
 	do
 	{
 		var remainder = FactorMe % divisor;
-		if (remainder == 0 || divisor == FactorMe / 2)
+		Console.WriteLine("{0} = {1} % {2}", remainder, FactorMe, divisor);
+		
+		if (divisor == FactorMe / 2)
+		{
+			break;
+		}
+		if (remainder == 0)
 		{
 			FactorList.Add(divisor);
 			AddFactor(FactorMe/divisor, ref FactorList);
