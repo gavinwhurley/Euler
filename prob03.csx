@@ -5,36 +5,29 @@
 */
 
 var factorMe = 12;
-var factors = new List<int>();
+// every number can be divided by one and itself
+var factors = new List<long>();
+
 Console.WriteLine("Factoring {0}", factorMe);
 
-AddFactor(factorMe, ref factors);
+// fill in the list
+foreach(var increment in Enumerable.Range(2, factorMe/2))
+{
+	if (factorMe % increment == 0)
+		factors.Add(increment);
+}
 
+// print it out
 foreach(var factor in factors)
 {
 	Console.WriteLine(factor);
 }
 
-public void AddFactor(int FactorMe, ref List<int> FactorList)
-{
-	var divisor = 2;
-	do
-	{
-		var remainder = FactorMe % divisor;
-		Console.WriteLine("{0} = {1} % {2}", remainder, FactorMe, divisor);
-		
-		if (divisor == FactorMe / 2)
-		{
-			break;
-		}
-		if (remainder == 0)
-		{
-			FactorList.Add(divisor);
-			AddFactor(FactorMe/divisor, ref FactorList);
-			break;
-		}
-		divisor++;
-	} while (1 == 1);
+// find the greatest one
+Console.WriteLine("Greatest factor: {0}", factors.Last());
 
-}
+// next problem: find the greatest prime factor
+//  and we have to use long integers
+
+
 
