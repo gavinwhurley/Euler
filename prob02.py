@@ -1,45 +1,29 @@
 #/usr/bin/python
 # https://projecteuler.net/problem=2
-
-def fib(n, m):
-	if (m > 400000):
-		return
-
-	print(m)
-
-	c = n
-	m = n + m
-	n = c
-
-	fib(n, m)
-
-def Countdown(n):
-	print(n)
-	if n == 0: 
-		return
-	Countdown(n-1)
+# By considering the terms in the Fibonacci sequence whose values do not exceed
+# four million, find the sum of the even-valued terms.
 
 def GetFib(n):
-
-	if n == 1 or n ==2:
+	if n == 0 or n ==1:
 		return 1
 	return GetFib(n-1) + GetFib(n-2)
 
 def main():
-	a, b, c = 0, 1, 0
-	
-	#fib(a,b)
+	# the problem with this approach is I don't know how to stop when I get to 
+	#  four million.  
+	answer = 0
+	x = 0
+	n = 0
 
-	print(GetFib(10))
-
-#	This works great, but I want to go recursive
-#	for x in xrange(1,20):
-#		print(b)
-#
-#		c = b
-#		b = a + b
-#		a = c
+	while n < 4000000:
+		n = GetFib(x)
+		if n % 2 == 0:
+			answer += n
+		x =  x + 1
+	print(answer)
 
 if __name__ == '__main__':
 	main()
 
+# this is horribly inefficient because it's computing the whole series for 
+# each counter integer.  This version sucks.  
