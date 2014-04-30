@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+euler.sublime-project
+euler.sublime-workspace
