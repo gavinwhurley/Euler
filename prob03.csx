@@ -2,9 +2,12 @@
 	https://projecteuler.net/problem=3
 	The prime primeFactors of 13195 are 5, 7, 13 and 29.
 	What is the largest prime factor of the number 600851475143 ?
+	Factoring 600851475143
+Greatest prime factor of 600851475143: 6857
 */
 
 var factorMe = 600851475143;
+
 // every number can be divided by one and itself
 var primeFactors = new List<long>();
 
@@ -27,9 +30,9 @@ private Boolean IsPrime(long number)
 {
 	if (number == 1) return true;
 
-	for(long l = 2; l < number; l++)
+	for(long l = 2; l <= Math.Sqrt(number); l++)
 	{
-		if (number % l == 0)
+		if (number % l == 0.0)
 		{
 			return false;
 		}

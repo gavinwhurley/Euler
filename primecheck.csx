@@ -3,9 +3,9 @@ private Boolean IsPrime(long number)
 {
 	if (number == 1) return true;
 
-	for(long l = 2; l < number; l++)
+	for(long l = 2; l <= Math.Sqrt(number); l++)
 	{
-		if (number % l == 0)
+		if (number % l == 0.0)
 		{
 			return false;
 		}
